@@ -1,0 +1,27 @@
+JWT 
+
+USER FAZ O LOGIN 
+
+ENVIA SEU EMAIL E SENHA 
+
+O BACKEND CRIA UM TOKEN UNICO E NAO MODIFICAVEL E STATELESS 
+
+STATELESS: SEM ESTADO --> NAO É ARMAZENADO EM NENHUM BANCO DE DADOS
+
+---------------------------------------------------------------------
+
+O JWT É COMPOSTO POR 3 COISAS --> HEADER / PAYLOAD / SIGNATURE
+
+HEADER --> Algoritmo utilizado, como por exemplo o AES256
+
+PAYLOAD --> Pode ser qualquer coisa 
+
+SIGNATURE --> Tudo é validado pela assinatura 
+
+instalando JWT --> npm i @fastify/jwt
+
+chamamos o jwt no app.ts
+
+criamos uma variavel de ambiente no .env
+
+e no env/index.ts passamos a var de ambiente para checar o tipo com zod 

@@ -1,0 +1,30 @@
+# docker run --name api-solid-pg -e POSTGRESQL_USERNAME=docker -e POSTGRESQL_PASSWORD=docker POSTGRESQL_DATABASE=apisolid -p 5432:5432 bitnami/postgresql 
+
+# estamos utilizando o docker compose para que, toda pessoa que pegue esse código nao precise rodar o comando acima
+
+# ISSO É BOM TAMBEM QUANDO TEMOS VARIOS CONTAINERS 
+
+version: '3'
+
+services: 
+  api-solid-pg:
+    image: bitnami/postgresql 
+    ports: 
+      - 5432:5432
+    environment:
+      - POSTGRESQL_USERNAME=docker
+      - POSTGRESQL_PASSWORD=docker
+      - POSTGRESQL_DATABASE=apisolid
+
+
+# toda vez que alguem pegar a aplicacao vai executar o seguinte comando 
+
+# docker compose up -d
+
+# para parar a execucao dos containers 
+
+# docker compose stop
+
+# para deletar os containers da aplicacao --> evitar chamar 
+
+# docker compose down 

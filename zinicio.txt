@@ -1,0 +1,85 @@
+npm init -y --> criando package.json
+
+npx tsc --init --> criar tsconfig.json
+
+npm i fastify 
+
+npm i dotenv
+
+npm i zod --> validacao dos dados 
+
+npm i vitest vite-tsconfig-paths -D --> vitest install 
+
+ npm i -D @vitest/ui --> instalando coisas do vitest 
+
+ -----------------------------------  PRISMA ------------------------------
+
+npm i prisma -D --> instalando o prisma 
+
+npx prisma init --> inicializando o banco de dados da nossa aplicacao 
+
+npx prisma generate -- fazendo a tipagem do banco de dados 
+
+------------------------------------- postgress com docker ---------------------------------
+
+como rodar o postgress com docker --> 
+
+docker run --name api-solid-pg -e POSTGRESQL_USERNAME=docker -e POSTGRESQL_PASSWORD=docker POSTGRESQL_DATABASE=apisolid -p 5432:5432 bitnami/postgresql 
+
+--> nome : api-solid-pg e bitnami/postgresql é a imagem que a gente quer passar. 
+
+--------------------------------------  RODANDO, DELETANDO E PARANDO DOCKER -----------------------------------
+
+para rodar o docker com o postgress --> docker start api-solid-pg
+
+Para parar a execucao do docker --> docker stop api-solid-pg 
+
+Para deletar o container --> docker rm api-solid-pg
+
+-------------------------------------- Como alterar o banco com Prisma e vizualizar o banco  -------------------------------------------
+
+npx prisma migrate dev  --> checa as mudancas que tem no nosso arquivo .env e realiza as mudancas no banco --> rodar esse comando sempre que tiver mudanca no banco como delecao e etc
+
+npx prisma studio --> abre no navegador as tabelas do nosso banco, melhorando a vizualizacao 
+
+
+---------------------------------------- UTILIZANDO COMPOSE ----------------------------------------------------------------------------
+
+toda vez que alguem pegar a aplicacao vai executar o seguinte comando 
+
+- docker compose up -d
+
+para parar a execucao dos containers 
+
+- docker compose stop
+
+para deletar os containers da aplicacao --> evitar chamar 
+
+- docker compose down 
+
+
+-------------------------------------------------------------------- HASH DE SENHAS E VALIDACAO ----------------------------------------------------------------
+
+npm i bcryptjs --> biblioteca para fazer hash de senhas 
+
+npm i -D @types/bcryptjs --> dependencias 
+
+
+---------------------------------------------------------------------- rodando aplicacao ------------------------------------------------------------------------
+
+npm run dev -- rodar server 
+
+abrir app do docker no pc
+
+docker compose up -d 
+
+npx prisma studio 
+
+
+--------------------------------------------------------- DESENVOLVIMENTO --------------------------------------------------------
+
+STEP 1 -> USE CASE 
+
+STEP 2 -> TEST
+
+STEP 3 -> CONTROLLER 
